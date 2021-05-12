@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Moving Companion</title>
+
+    <link rel="stylesheet" href='./bootstrap.min.css'>
+    <link rel="stylesheet" href='./css/style.css'>
+
+</head>
+
+<body>
+    <div class='row mt-2 mb-2'>
+    <h1 id="greeting" class="greeting text-center">What city do you want info about?</h1>
+</div>
+    <form id="form-container">
+        <!--  <label for="street">Street: </label><input type="text" id="street" value=""> -->
+        <div id="form-container" class="form-group">
+            <div class="row justify-content-center">
+                <div class="col-4 justify-content-center">
+                    <input class="form-control form-control-sm" type="text" placeholder="search" type="text" id="city"
+                        value="">
+                        <div class="row">
+                            <div class='col-12 justify-content-center'>
+                    <button id="submit-btn"  class="btn btn-primary mt-2">Submit</button>
+                </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+    <hr>
+
+
+
+    <div class='row px-2'>
+        <div class="col-12 col-lg-8 p-2 ">
+            <h3 id="nytimes-header">New York Times Articles</h3>
+            <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit
+                submit
+                and the NY Times will tell you here!
+        </div>
+        <div class="col-12 col-lg-4 p-4">
+            <div class='row px-2'>
+                <div class="col-2 ">
+                    <img id="icon">
+                    <h3 id="weather">Weather</h3>
+                    <p>Description: <span id="desc"></span></p>
+                    <p>Temperature: <span id="temp"></span></p>
+                    <p>Min: <span id="min"></span></p>
+                    <p>Max: <span id="max"></span></p>
+                </div>
+            </div>
+            <div class='row mt-2 px-2'>
+                <div class="col-12">
+                <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+                <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+            </div>
+        </div>
+        </div>
+
+
+
+    </div>
+    
+    <div class='row px-2 mx-auto'>
+
+        <div class='col-12 mx-auto'>
+            <h3 class='mb-2'>Images From Flickr</h3>
+        <div id="outputDiv"></div>
+    </div>
+    </div>
+
+
+
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

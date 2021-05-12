@@ -1,0 +1,15 @@
+h2,
+.temp, .pressure, .wind-spd, .weather-descr, #altit, #latitude-val {
+  font-size: 40px;
+}
+
+
+#cityname,
+.temp {
+  margin-top: 15px;
+}
+
+#city-name-wrapper {
+  text-align: center;
+  
+}
