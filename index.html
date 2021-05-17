@@ -35,45 +35,53 @@
 
     <hr>
 
-
+    
+   
+    
 
     <div class='row px-2'>
-        <div class="col-12 col-lg-8 p-2 ">
-            <h3 id="nytimes-header">New York Times Articles</h3>
-            <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit
-                submit
-                and the NY Times will tell you here!
+        <div class="col-12 col-lg-6 p-4">
+            <div class='row  px-2'>
+                <div class="col-12">
+                <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+                <!--<ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+                -->
+                <div id="output"></div>
+            </div>
         </div>
-        <div class="col-12 col-lg-4 p-4">
-            <div class='row px-2'>
-                <div class="col-2 ">
+        </div>
+        <div class="col-12 col-lg-6 p-4  ">
+            
+                <div class="col-6 ">
+                    <h3>Weather API</h3>
                     <img id="icon">
-                    <h3 id="weather">Weather</h3>
+                    <h3 id="weather"></h3>
                     <p>Description: <span id="desc"></span></p>
                     <p>Temperature: <span id="temp"></span></p>
                     <p>Min: <span id="min"></span></p>
                     <p>Max: <span id="max"></span></p>
                 </div>
-            </div>
-            <div class='row mt-2 px-2'>
-                <div class="col-12">
-                <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-                <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
-            </div>
+            
+            
+        </div>
+        
+        <div class='row px-2 mx-auto'>
+
+            <div class='col-12 mx-auto'>
+                <h3 class='mb-2'>Images From Flickr</h3>
+            <div id="outputDiv"></div>
         </div>
         </div>
+        <h3 id="nytimes-header">New York Times Articles</h3>
+            <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit
+                submit
+                and the NY Times will tell you here!
 
 
 
     </div>
     
-    <div class='row px-2 mx-auto'>
-
-        <div class='col-12 mx-auto'>
-            <h3 class='mb-2'>Images From Flickr</h3>
-        <div id="outputDiv"></div>
-    </div>
-    </div>
+    
 
 
 

@@ -26,7 +26,7 @@ function loadData() {
     //$body.append('<img class="bgimg" src="' + streetviewUrl + '">');
 
     // Your NYTimes AJAX request goes here
-    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=Te7ZJ3ErPD4AvK5OIs8NbGxZJZ7c0MZo'
+   var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=Te7ZJ3ErPD4AvK5OIs8NbGxZJZ7c0MZo'
     $.getJSON(nytimesUrl, function (data) {
         $nytHeaderElem.text('New York Times Articles About ' + cityStr);
         articles = data.response.docs;
@@ -36,10 +36,12 @@ function loadData() {
         };
     }).error(function (e) {
         $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
-    });
+    }); 
+
+    
 
     // Wikipedia AJAX request goes here
-    var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + cityStr + '&format=json&callback=wikiCallback';
+   /* var wikiUrl = 'http://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=' + cityStr + '&format=json&callback=wikiCallback';
     var wikiRequestTimeout = setTimeout(function () {
         $wikiElem.text("failed to get wikipedia resources");
     }, 8000);
@@ -47,7 +49,7 @@ function loadData() {
     $.ajax({
         url: wikiUrl,
         dataType: "jsonp",
-        // jsonp: "callback",
+        jsonp: "callback",
         success: function (response) {
             var articleList = response[1];
             for (var i = 0; i < articleList.length; i++) {
@@ -58,8 +60,26 @@ function loadData() {
             clearTimeout(wikiRequestTimeout);
         }
 
-    });
+    }); */
 
+
+    var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+
+    cityStr+"&format=json&callback=?";
+    
+    $.ajax({
+      url:url,
+      type: "GET",
+      async: false,
+      dataType: "json",
+      success: function(data, status, jqXHR){
+        console.log(data);
+        
+        for(var i = 0; i < data[1].length; i++){
+          $("#output").prepend("<div><div class='well'><a href="+data[3][i]+"><h5>"+data[1][i]+"</h5>" + "<p>" + data[2][1] + "</p></a></div></div>");
+        }
+      }
+      
+    })
 
     var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + cityStr;
     $.ajax({
